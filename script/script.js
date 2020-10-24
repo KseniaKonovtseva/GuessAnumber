@@ -3,23 +3,31 @@
 function guessNumFunc() {
   let initialNum = parseInt(Math.random() * 100);
   
-  function checkAnswer(){
-    let answer = prompt('Угадай число от 1 до 100');
+  function checkAnswer(answer){
+    answer = prompt('Угадай число от 1 до 100');
 
     if (isNaN(answer)){
       alert('Введи число!');
-
-    } else if (answer === null) {
-      alert('Игра окончена');
-
-    } else if (+answer === initialNum){
-      alert('Поздравляю, Вы угадали!');
+      checkAnswer();
+    } 
+    
+    if (answer === null) {
+      return alert('Игра окончена');
+    }
+    
+    
+    if (+answer === initialNum){
+      return alert('Поздравляю, Вы угадали!');
 
     } else if (+answer > initialNum){
-      answer = +prompt('Загаданное число меньше...');
+      alert('Загаданное число меньше');
+      //answer = +prompt('Загаданное число меньше...');
+      checkAnswer(answer);
 
     } else if (+answer < initialNum){
-      answer = +prompt('Загаданное число больше...');
+      alert('Загаданное число больше')
+      //answer = +prompt('Загаданное число больше...');
+      checkAnswer(answer);
     }
 
   }
