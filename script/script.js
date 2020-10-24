@@ -21,12 +21,10 @@ function guessNumFunc() {
 
     } else if (+answer > initialNum){
       alert('Загаданное число меньше');
-      //answer = +prompt('Загаданное число меньше...');
       checkAnswer(answer);
 
     } else if (+answer < initialNum){
-      alert('Загаданное число больше')
-      //answer = +prompt('Загаданное число больше...');
+      alert('Загаданное число больше');
       checkAnswer(answer);
     }
 
