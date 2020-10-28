@@ -3,8 +3,9 @@
 function guessNumFunc() {
   let initialNum = parseInt(Math.random() * 100);
   
-  function checkAnswer(answer){
-    answer = prompt('Угадай число от 1 до 100');
+
+  function checkAnswer(){
+    const answer = prompt('Угадай число от 1 до 100');
 
     if (isNaN(answer)){
       alert('Введи число!');
@@ -15,23 +16,22 @@ function guessNumFunc() {
       return alert('Игра окончена');
     }
     
-    
     if (+answer === initialNum){
       return alert('Поздравляю, Вы угадали!');
 
     } else if (+answer > initialNum){
       alert('Загаданное число меньше');
-      checkAnswer(answer);
 
     } else if (+answer < initialNum){
       alert('Загаданное число больше');
-      checkAnswer(answer);
     }
 
+    return checkAnswer();
+
   }
+
   console.log(initialNum);
   return checkAnswer();
 }
 
-const guessNum = guessNumFunc();
-guessNum();
+guessNumFunc();
